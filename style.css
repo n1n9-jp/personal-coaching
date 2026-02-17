@@ -79,13 +79,29 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  /* height: 70px; ←固定値を削除し、中身（ロゴ80px）で高さを決める */
+  padding: 0.5rem 2rem;
 }
 
 .logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: flex; /* 画像の上下余白調整のため */
+  align-items: center;
+}
+
+.logo a {
+  display: block;
+  line-height: 0; /* 画像の下の余白を消す */
+}
+
+.logo img {
+  height: 80px; /* ヘッダーの高さに合わせて調整 */
+  width: auto;
+  filter: grayscale(100%); /* ロゴもモノクロ化 */
+  transition: filter 0.3s ease;
+}
+
+.logo img:hover {
+  filter: grayscale(0%);
 }
 
 nav ul {
@@ -372,6 +388,10 @@ footer {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  
+  .logo img {
+    height: 50px; /* スマホでは小さめに */
   }
   
   nav a {

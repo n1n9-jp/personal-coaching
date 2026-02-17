@@ -23,6 +23,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+img:hover {
+  filter: grayscale(0%); /* Optional: hover for color */
+}
+
 /* Utils */
 .container {
   max-width: var(--max-width);
